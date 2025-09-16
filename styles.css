@@ -1,0 +1,148 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Header Styles */
+h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #34495e;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Links */
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Table Styles */
+table {
+    width: 90%;
+    margin: 20px auto;
+    margin-bottom: 40px; /* Add this */
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* Ensure the first column has a minimum width */
+table th:first-child,
+table td:first-child {
+    min-width: 150px; /* Adjust this value as needed */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+table th,
+table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #2c3e50;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem; /* Add this */
+    letter-spacing: 1px; /* Add this */
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Audio Controls */
+audio {
+    margin: 10px 0;
+}
+
+/* Div and Figure Styling */
+div {
+    padding: 20px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+figure {
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    table {
+        width: 100%;
+    }
+}
+
+/* Styling for Description List */
+dl {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 800px; /* Limit the width */
+    font-family: 'Arial', sans-serif;
+}
+
+dt {
+    font-weight: bold;
+    font-size: 1.2rem; /* Slightly larger font for emphasis */
+    color: #2c3e50; /* Darker color for the term */
+    margin-top: 15px; /* Space above each term */
+    text-align: left; /* Align terms to the left */
+}
+
+dd {
+    font-size: 1rem;
+    color: #555; /* Softer color for the description */
+    margin-left: 20px; /* Indent descriptions */
+    margin-bottom: 10px; /* Space between descriptions */
+    line-height: 1.6; /* Improve readability */
+    text-align: left; /* Align terms to the left */
+}
