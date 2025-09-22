@@ -3,15 +3,58 @@
 <html lang="en-US">
 <head>
 <meta charset="UTF-8">
-<title>test test test</title>
+<title>PASSE: Personalized Auxiliary-Sensor Speech Enhancement for Voice Pickup in Hearables</title>
 <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
 <div>
+<h1>
+PAS-SE: Personalized Auxiliary-Sensor Speech Enhancement for Voice Pickup in Hearables</h1>
+<h3>
+Mattes Ohlenbusch<sup>1,2</sup>, Mikolaj Kegler<sup>1</sup>, Marko Stamenovic<sup>1</sup>
+</h3>
 
+<p style="font-size: 0.9em; text-align: center; margin-top: 5px; margin-bottom: 20px;">
+<sup>1</sup>Bose Corporation, USA &nbsp; <sup>2</sup>Fraunhofer IDMT, Germany &nbsp;
+</p>
 
+<h2>Abstract</h2>
+<p>
+Speech enhancement for voice pickup in hearables aims to improve the user’s voice by suppressing noise and interfering talkers, while maintaining own-voice quality. 
+For single-channel methods, it is particularly challenging to distinguish the target from interfering talkers without additional context. 
+In this paper, we compare two strategies to resolve this ambiguity:
+personalized speech enhancement (PSE), which uses enrollment utterances to represent the target, and auxiliary‑sensor speech enhancement (AS-SE), which uses in‑ear microphones as additional input.
+We evaluate the strategies on two public datasets, employing different auxiliary sensor arrays, to investigate their cross-dataset generalization.
+We propose training‑time augmentations to facilitate cross-dataset generalization of AS-SE systems. We also show that combining PSE and AS-SE (PAS-SE) provides complementary performance benefits, especially when enrollment speech is recorded with the in‑ear microphone.
+We further demonstrate that PAS-SE personalized with noisy in-ear enrollments maintains performance benefits over the AS-SE system.
+</p>
+</div>
+
+<h2>Links</h2>
+
+<dl>
+	<dt>arXiv preprint:</dt> 
+	<dd>Coming soon!<!-- This is a comment <a href="https://arxiv.org/abs/2310.06554">https://arxiv.org/abs/2310.06554</a> --></dd>
+	<dt>Code:</dt>
+	<dd>Coming soon!</dd>
+	<dt>Vibravox Dataset:</dt> 
+	<dd><a href="http://vibravox.cnam.fr/">http://vibravox.cnam.fr/</a></dd>
+	<dt>Oldenburg Dataset:</dt> 
+	<dd><a href="https://doi.org/10.5281/zenodo.10844598">https://doi.org/10.5281/zenodo.10844598</a> (own voice),<br>
+		<a href="https://doi.org/10.5281/zenodo.11196866">https://doi.org/10.5281/zenodo.11196866</a> (impulse responses)</dd>
+
+</dl>
+
+<h2>Audio Examples Oldenburg (out-of-domain)</h2>
+
+<p style="text-align: center;">
+<strong>Training:</strong> Vibravox dataset (training partition)<br>
+<strong>Evaluation:</strong> Oldenburg dataset (test partition)
+</p>
+
+<div class="table-container">
 <table>
 <tr> 
 <th>System</th><th>Noise only</th><th>Interferer only</th><th>Noise and Interferer</th>
@@ -22,12 +65,299 @@
 Noisy outer microphone 
 </td>
 <td>
-	<audio controls="controls"><source src="audio_empty/output_0.wav" type="audio/x-wav" /></audio>
-	</td>
-
+	<audio controls="controls"><source src="audio/OL_N/Noisy_Ref/output_0.wav" type="audio/x-wav" /></audio>
+	<audio controls="controls"><source src="audio/OL_N/Noisy_Ref/output_1.wav" type="audio/x-wav" /></audio>
+</td>
+<td>
+	<audio controls="controls"><source src="audio/OL_I/Noisy_Ref/output_0.wav" type="audio/x-wav" /></audio>
+	<audio controls="controls"><source src="audio/OL_I/Noisy_Ref/output_1.wav" type="audio/x-wav" /></audio>
+</td>
+<td>
+	<audio controls="controls"><source src="audio/OL_NI/Noisy_Ref/output_0.wav" type="audio/x-wav" /></audio>
+	<audio controls="controls"><source src="audio/OL_NI/Noisy_Ref/output_1.wav" type="audio/x-wav" /></audio>
+</td>
 </tr>
 
+<tr> 
+<td>
+SE 
+</td>
+<td>
+	<audio controls="controls"><source src="audio/OL_N/FTJNF_SC/output_0.wav" type="audio/x-wav" /></audio>
+	<audio controls="controls"><source src="audio/OL_N/FTJNF_SC/output_1.wav" type="audio/x-wav" /></audio>
+</td>
+<td>
+	<audio controls="controls"><source src="audio/OL_I/FTJNF_SC/output_0.wav" type="audio/x-wav" /></audio>
+	<audio controls="controls"><source src="audio/OL_I/FTJNF_SC/output_1.wav" type="audio/x-wav" /></audio>
+</td>
+<td>
+	<audio controls="controls"><source src="audio/OL_NI/FTJNF_SC/output_0.wav" type="audio/x-wav" /></audio>
+	<audio controls="controls"><source src="audio/OL_NI/FTJNF_SC/output_1.wav" type="audio/x-wav" /></audio>
+</td>
+</tr>
+
+
+<tr> 
+	<td>
+	PSE,<br>Outer mic enrollment
+	</td>
+	<td>
+		<audio controls="controls"><source src="audio/OL_N/FTJNF_SC_OM/output_0.wav" type="audio/x-wav" /></audio>
+		<audio controls="controls"><source src="audio/OL_N/FTJNF_SC_OM/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+	<td>
+		<audio controls="controls"><source src="audio/OL_I/FTJNF_SC_OM/output_0.wav" type="audio/x-wav" /></audio>
+		<audio controls="controls"><source src="audio/OL_I/FTJNF_SC_OM/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+	<td>
+		<audio controls="controls"><source src="audio/OL_NI/FTJNF_SC_OM/output_0.wav" type="audio/x-wav" /></audio>
+		<audio controls="controls"><source src="audio/OL_NI/FTJNF_SC_OM/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+	</tr>
+
+
+<tr> 
+<td>
+ASSE (D) 
+</td>
+<td>
+	<audio controls="controls"><source src="audio/OL_N/FTJNF_MC_D/output_0.wav" type="audio/x-wav" /></audio>
+	<audio controls="controls"><source src="audio/OL_N/FTJNF_MC_D/output_1.wav" type="audio/x-wav" /></audio>
+</td>
+<td>
+	<audio controls="controls"><source src="audio/OL_I/FTJNF_MC_D/output_0.wav" type="audio/x-wav" /></audio>
+	<audio controls="controls"><source src="audio/OL_I/FTJNF_MC_D/output_1.wav" type="audio/x-wav" /></audio>
+</td>
+<td>
+	<audio controls="controls"><source src="audio/OL_NI/FTJNF_MC_D/output_0.wav" type="audio/x-wav" /></audio>
+	<audio controls="controls"><source src="audio/OL_NI/FTJNF_MC_D/output_1.wav" type="audio/x-wav" /></audio>
+</td>
+</tr>
+
+
+<tr> 
+	<td>
+	PASSE (D),<br>In-ear mic enrollment
+	</td>
+	<td>
+		<audio controls="controls"><source src="audio/OL_N/FTJNF_MC_D_IM/output_0.wav" type="audio/x-wav" /></audio>
+		<audio controls="controls"><source src="audio/OL_N/FTJNF_MC_D_IM/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+	<td>
+		<audio controls="controls"><source src="audio/OL_I/FTJNF_MC_D_IM/output_0.wav" type="audio/x-wav" /></audio>
+		<audio controls="controls"><source src="audio/OL_I/FTJNF_MC_D_IM/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+	<td>
+		<audio controls="controls"><source src="audio/OL_NI/FTJNF_MC_D_IM/output_0.wav" type="audio/x-wav" /></audio>
+		<audio controls="controls"><source src="audio/OL_NI/FTJNF_MC_D_IM/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+	</tr>
+
 </table>
+</div>
+
+<!-- Alternative card layout for very small screens -->
+<div class="cards-container">
+    <div class="audio-card">
+        <h4>Noisy outer microphone</h4>
+        <div class="audio-section">
+            <h5>Noise only</h5>
+            <audio controls="controls"><source src="audio/OL_N/Noisy_Ref/output_0.wav" type="audio/x-wav" /></audio>
+            <audio controls="controls"><source src="audio/OL_N/Noisy_Ref/output_1.wav" type="audio/x-wav" /></audio>
+        </div>
+        <div class="audio-section">
+            <h5>Interferer only</h5>
+            <audio controls="controls"><source src="audio/OL_I/Noisy_Ref/output_0.wav" type="audio/x-wav" /></audio>
+            <audio controls="controls"><source src="audio/OL_I/Noisy_Ref/output_1.wav" type="audio/x-wav" /></audio>
+        </div>
+        <div class="audio-section">
+            <h5>Noise and Interferer</h5>
+            <audio controls="controls"><source src="audio/OL_NI/Noisy_Ref/output_0.wav" type="audio/x-wav" /></audio>
+            <audio controls="controls"><source src="audio/OL_NI/Noisy_Ref/output_1.wav" type="audio/x-wav" /></audio>
+        </div>
+    </div>
+
+    <div class="audio-card">
+        <h4>SE</h4>
+        <div class="audio-section">
+            <h5>Noise only</h5>
+            <audio controls="controls"><source src="audio/OL_N/FTJNF_SC/output_0.wav" type="audio/x-wav" /></audio>
+            <audio controls="controls"><source src="audio/OL_N/FTJNF_SC/output_1.wav" type="audio/x-wav" /></audio>
+        </div>
+        <div class="audio-section">
+            <h5>Interferer only</h5>
+            <audio controls="controls"><source src="audio/OL_I/FTJNF_SC/output_0.wav" type="audio/x-wav" /></audio>
+            <audio controls="controls"><source src="audio/OL_I/FTJNF_SC/output_1.wav" type="audio/x-wav" /></audio>
+        </div>
+        <div class="audio-section">
+            <h5>Noise and Interferer</h5>
+            <audio controls="controls"><source src="audio/OL_NI/FTJNF_SC/output_0.wav" type="audio/x-wav" /></audio>
+            <audio controls="controls"><source src="audio/OL_NI/FTJNF_SC/output_1.wav" type="audio/x-wav" /></audio>
+        </div>
+    </div>
+
+    <div class="audio-card">
+        <h4>PSE, Outer mic enrollment</h4>
+        <div class="audio-section">
+            <h5>Noise only</h5>
+            <audio controls="controls"><source src="audio/OL_N/FTJNF_SC_OM/output_0.wav" type="audio/x-wav" /></audio>
+            <audio controls="controls"><source src="audio/OL_N/FTJNF_SC_OM/output_1.wav" type="audio/x-wav" /></audio>
+        </div>
+        <div class="audio-section">
+            <h5>Interferer only</h5>
+            <audio controls="controls"><source src="audio/OL_I/FTJNF_SC_OM/output_0.wav" type="audio/x-wav" /></audio>
+            <audio controls="controls"><source src="audio/OL_I/FTJNF_SC_OM/output_1.wav" type="audio/x-wav" /></audio>
+        </div>
+        <div class="audio-section">
+            <h5>Noise and Interferer</h5>
+            <audio controls="controls"><source src="audio/OL_NI/FTJNF_SC_OM/output_0.wav" type="audio/x-wav" /></audio>
+            <audio controls="controls"><source src="audio/OL_NI/FTJNF_SC_OM/output_1.wav" type="audio/x-wav" /></audio>
+        </div>
+    </div>
+
+    <div class="audio-card">
+        <h4>ASSE (D)</h4>
+        <div class="audio-section">
+            <h5>Noise only</h5>
+            <audio controls="controls"><source src="audio/OL_N/FTJNF_MC_D/output_0.wav" type="audio/x-wav" /></audio>
+            <audio controls="controls"><source src="audio/OL_N/FTJNF_MC_D/output_1.wav" type="audio/x-wav" /></audio>
+        </div>
+        <div class="audio-section">
+            <h5>Interferer only</h5>
+            <audio controls="controls"><source src="audio/OL_I/FTJNF_MC_D/output_0.wav" type="audio/x-wav" /></audio>
+            <audio controls="controls"><source src="audio/OL_I/FTJNF_MC_D/output_1.wav" type="audio/x-wav" /></audio>
+        </div>
+        <div class="audio-section">
+            <h5>Noise and Interferer</h5>
+            <audio controls="controls"><source src="audio/OL_NI/FTJNF_MC_D/output_0.wav" type="audio/x-wav" /></audio>
+            <audio controls="controls"><source src="audio/OL_NI/FTJNF_MC_D/output_1.wav" type="audio/x-wav" /></audio>
+        </div>
+    </div>
+
+    <div class="audio-card">
+        <h4>PASSE (D), In-ear mic enrollment</h4>
+        <div class="audio-section">
+            <h5>Noise only</h5>
+            <audio controls="controls"><source src="audio/OL_N/FTJNF_MC_D_IM/output_0.wav" type="audio/x-wav" /></audio>
+            <audio controls="controls"><source src="audio/OL_N/FTJNF_MC_D_IM/output_1.wav" type="audio/x-wav" /></audio>
+        </div>
+        <div class="audio-section">
+            <h5>Interferer only</h5>
+            <audio controls="controls"><source src="audio/OL_I/FTJNF_MC_D_IM/output_0.wav" type="audio/x-wav" /></audio>
+            <audio controls="controls"><source src="audio/OL_I/FTJNF_MC_D_IM/output_1.wav" type="audio/x-wav" /></audio>
+        </div>
+        <div class="audio-section">
+            <h5>Noise and Interferer</h5>
+            <audio controls="controls"><source src="audio/OL_NI/FTJNF_MC_D_IM/output_0.wav" type="audio/x-wav" /></audio>
+            <audio controls="controls"><source src="audio/OL_NI/FTJNF_MC_D_IM/output_1.wav" type="audio/x-wav" /></audio>
+        </div>
+    </div>
+</div>
+
+<h2>Audio Examples Vibravox (in-domain)</h2>
+
+<p style="text-align: center;">
+<strong>Training:</strong> Vibravox dataset (training partition)<br>
+<strong>Evaluation:</strong> Vibravox dataset (test partition)
+</p>
+
+<div class="table-container">
+<table>
+<tr> 
+<th>System</th><th>Noise only</th><th>Interferer only</th><th>Noise and Interferer</th>
+</tr>
+
+<tr> 
+<td>
+Noisy outer microphone 
+</td>
+<td>
+	<audio controls="controls"><source src="audio/VV_N/Noisy_Ref/output_0.wav" type="audio/x-wav" /></audio>
+	<audio controls="controls"><source src="audio/VV_N/Noisy_Ref/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+<td>
+	<audio controls="controls"><source src="audio/VV_I/Noisy_Ref/output_0.wav" type="audio/x-wav" /></audio>
+	<audio controls="controls"><source src="audio/VV_I/Noisy_Ref/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+<td>
+	<audio controls="controls"><source src="audio/VV_NI/Noisy_Ref/output_0.wav" type="audio/x-wav" /></audio>
+	<audio controls="controls"><source src="audio/VV_NI/Noisy_Ref/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+</tr>
+
+<tr> 
+<td>
+SE 
+</td>
+<td>
+	<audio controls="controls"><source src="audio/VV_N/FTJNF_SC/output_0.wav" type="audio/x-wav" /></audio>
+	<audio controls="controls"><source src="audio/VV_N/FTJNF_SC/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+<td>
+	<audio controls="controls"><source src="audio/VV_I/FTJNF_SC/output_0.wav" type="audio/x-wav" /></audio>
+	<audio controls="controls"><source src="audio/VV_I/FTJNF_SC/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+<td>
+	<audio controls="controls"><source src="audio/VV_NI/FTJNF_SC/output_0.wav" type="audio/x-wav" /></audio>
+	<audio controls="controls"><source src="audio/VV_NI/FTJNF_SC/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+</tr>
+
+
+<tr> 
+	<td>
+	PSE,<br>Outer mic enrollment
+	</td>
+	<td>
+		<audio controls="controls"><source src="audio/VV_N/FTJNF_SC_OM/output_0.wav" type="audio/x-wav" /></audio>
+		<audio controls="controls"><source src="audio/VV_N/FTJNF_SC_OM/output_1.wav" type="audio/x-wav" /></audio>
+			</td>
+	<td>
+		<audio controls="controls"><source src="audio/VV_I/FTJNF_SC_OM/output_0.wav" type="audio/x-wav" /></audio>
+		<audio controls="controls"><source src="audio/VV_I/FTJNF_SC_OM/output_1.wav" type="audio/x-wav" /></audio>
+		</td>
+	<td>
+		<audio controls="controls"><source src="audio/VV_NI/FTJNF_SC_OM/output_0.wav" type="audio/x-wav" /></audio>
+		<audio controls="controls"><source src="audio/VV_NI/FTJNF_SC_OM/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+	</tr>
+
+<tr> 
+<td>
+ASSE (D) 
+</td>
+<td>
+	<audio controls="controls"><source src="audio/VV_N/FTJNF_MC_D/output_0.wav" type="audio/x-wav" /></audio>
+	<audio controls="controls"><source src="audio/VV_N/FTJNF_MC_D/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+<td>
+	N/A<br><span style="font-size: 0.8em;">Vibravox dataset does not contain pre-recorded interfering talkers</span>
+</td>
+<td>
+	N/A<br><span style="font-size: 0.8em;">Vibravox dataset does not contain pre-recorded interfering talkers</span>
+</td>
+</tr>
+
+
+
+<tr> 
+	<td>
+	PASSE (D),<br>In-ear mic enrollment
+	</td>
+	<td>
+		<audio controls="controls"><source src="audio/VV_N/FTJNF_MC_D_IM/output_0.wav" type="audio/x-wav" /></audio>
+		<audio controls="controls"><source src="audio/VV_N/FTJNF_MC_D_IM/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+	<td>
+		N/A<br><span style="font-size: 0.8em;">Vibravox dataset does not contain pre-recorded interfering talkers</span>
+	</td>
+	<td>
+		N/A<br><span style="font-size: 0.8em;">Vibravox dataset does not contain pre-recorded interfering talkers</span>
+	</td>
+	</tr>
+
+</table>
+</div>
 
 </body>
 </html>
