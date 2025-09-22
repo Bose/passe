@@ -118,7 +118,7 @@ SE
 
 <tr> 
 <td>
-ASSE (D) 
+AS-SE (D) 
 </td>
 <td>
 	<audio controls="controls"><source src="audio/OL_N/FTJNF_MC_D/output_0.wav" type="audio/x-wav" /></audio>
@@ -137,7 +137,7 @@ ASSE (D)
 
 <tr> 
 	<td>
-	PASSE (D),<br>In-ear mic enrollment
+	PAS-SE (D),<br>In-ear mic enrollment
 	</td>
 	<td>
 		<audio controls="controls"><source src="audio/OL_N/FTJNF_MC_D_IM/output_0.wav" type="audio/x-wav" /></audio>
@@ -150,6 +150,42 @@ ASSE (D)
 	<td>
 		<audio controls="controls"><source src="audio/OL_NI/FTJNF_MC_D_IM/output_0.wav" type="audio/x-wav" /></audio>
 		<audio controls="controls"><source src="audio/OL_NI/FTJNF_MC_D_IM/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+	</tr>
+
+<tr> 
+	<td>
+	PAS-SE (OL),<br>In-ear mic enrollment<br>(trained in-domain)
+	</td>
+	<td>
+		<audio controls="controls"><source src="audio/OL_N/FTJNF_MC_OL_IM/output_0.wav" type="audio/x-wav" /></audio>
+		<audio controls="controls"><source src="audio/OL_N/FTJNF_MC_OL_IM/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+	<td>
+		<audio controls="controls"><source src="audio/OL_I/FTJNF_MC_OL_IM/output_0.wav" type="audio/x-wav" /></audio>
+		<audio controls="controls"><source src="audio/OL_I/FTJNF_MC_OL_IM/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+	<td>
+		<audio controls="controls"><source src="audio/OL_NI/FTJNF_MC_OL_IM/output_0.wav" type="audio/x-wav" /></audio>
+		<audio controls="controls"><source src="audio/OL_NI/FTJNF_MC_OL_IM/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+	</tr>
+
+<tr> 
+	<td>
+	Clean target 
+	</td>
+	<td>
+		<audio controls="controls"><source src="audio/OL_N/Clean_Target/output_0.wav" type="audio/x-wav" /></audio>
+		<audio controls="controls"><source src="audio/OL_N/Clean_Target/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+	<td>
+		<audio controls="controls"><source src="audio/OL_I/Clean_Target/output_0.wav" type="audio/x-wav" /></audio>
+		<audio controls="controls"><source src="audio/OL_I/Clean_Target/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+	<td>
+		<audio controls="controls"><source src="audio/OL_NI/Clean_Target/output_0.wav" type="audio/x-wav" /></audio>
+		<audio controls="controls"><source src="audio/OL_NI/Clean_Target/output_1.wav" type="audio/x-wav" /></audio>
 	</td>
 	</tr>
 
@@ -216,7 +252,7 @@ ASSE (D)
     </div>
 
     <div class="audio-card">
-        <h4>ASSE (D)</h4>
+        <h4>AS-SE (D)</h4>
         <div class="audio-section">
             <h5>Noise only</h5>
             <audio controls="controls"><source src="audio/OL_N/FTJNF_MC_D/output_0.wav" type="audio/x-wav" /></audio>
@@ -235,7 +271,7 @@ ASSE (D)
     </div>
 
     <div class="audio-card">
-        <h4>PASSE (D), In-ear mic enrollment</h4>
+        <h4>PAS-SE (D), In-ear mic enrollment</h4>
         <div class="audio-section">
             <h5>Noise only</h5>
             <audio controls="controls"><source src="audio/OL_N/FTJNF_MC_D_IM/output_0.wav" type="audio/x-wav" /></audio>
@@ -252,6 +288,25 @@ ASSE (D)
             <audio controls="controls"><source src="audio/OL_NI/FTJNF_MC_D_IM/output_1.wav" type="audio/x-wav" /></audio>
         </div>
     </div>
+	<div class="audio-card">
+        <h4>Clean target</h4>
+        <div class="audio-section">
+            <h5>Noise only</h5>
+            <audio controls="controls"><source src="audio/OL_N/Clean_Target/output_0.wav" type="audio/x-wav" /></audio>
+            <audio controls="controls"><source src="audio/OL_N/Clean_Target/output_1.wav" type="audio/x-wav" /></audio>
+        </div>
+        <div class="audio-section">
+            <h5>Interferer only</h5>
+            <audio controls="controls"><source src="audio/OL_I/Clean_Target/output_0.wav" type="audio/x-wav" /></audio>
+            <audio controls="controls"><source src="audio/OL_I/Clean_Target/output_1.wav" type="audio/x-wav" /></audio>
+        </div>
+        <div class="audio-section">
+            <h5>Noise and Interferer</h5>
+            <audio controls="controls"><source src="audio/OL_NI/Clean_Target/output_0.wav" type="audio/x-wav" /></audio>
+            <audio controls="controls"><source src="audio/OL_NI/Clean_Target/output_1.wav" type="audio/x-wav" /></audio>
+        </div>
+    </div>
+
 </div>
 
 <h2>Audio Examples Vibravox (in-domain)</h2>
@@ -324,17 +379,17 @@ SE
 
 <tr> 
 <td>
-ASSE (D) 
+AS-SE (D) 
 </td>
 <td>
 	<audio controls="controls"><source src="audio/VV_N/FTJNF_MC_D/output_0.wav" type="audio/x-wav" /></audio>
 	<audio controls="controls"><source src="audio/VV_N/FTJNF_MC_D/output_1.wav" type="audio/x-wav" /></audio>
 	</td>
 <td>
-	N/A<br><span style="font-size: 0.8em;">Vibravox dataset does not contain pre-recorded interfering talkers</span>
+	N/A<br><span style="font-size: 0.8em;">Vibravox dataset does not contain isolated recordings of interfering talkers</span>
 </td>
 <td>
-	N/A<br><span style="font-size: 0.8em;">Vibravox dataset does not contain pre-recorded interfering talkers</span>
+	N/A<br><span style="font-size: 0.8em;">Vibravox dataset does not contain isolated recordings of interfering talkers</span>
 </td>
 </tr>
 
@@ -342,17 +397,35 @@ ASSE (D)
 
 <tr> 
 	<td>
-	PASSE (D),<br>In-ear mic enrollment
+	PAS-SE (D),<br>In-ear mic enrollment
 	</td>
 	<td>
 		<audio controls="controls"><source src="audio/VV_N/FTJNF_MC_D_IM/output_0.wav" type="audio/x-wav" /></audio>
 		<audio controls="controls"><source src="audio/VV_N/FTJNF_MC_D_IM/output_1.wav" type="audio/x-wav" /></audio>
 	</td>
 	<td>
-		N/A<br><span style="font-size: 0.8em;">Vibravox dataset does not contain pre-recorded interfering talkers</span>
+		N/A<br><span style="font-size: 0.8em;">Vibravox dataset does not contain isolated recordings of interfering talkers</span>
 	</td>
 	<td>
-		N/A<br><span style="font-size: 0.8em;">Vibravox dataset does not contain pre-recorded interfering talkers</span>
+		N/A<br><span style="font-size: 0.8em;">Vibravox dataset does not contain isolated recordings of interfering talkers</span>
+	</td>
+	</tr>
+
+<tr> 
+	<td>
+	Clean target 
+	</td>
+	<td>
+		<audio controls="controls"><source src="audio/VV_N/Clean_Target/output_0.wav" type="audio/x-wav" /></audio>
+		<audio controls="controls"><source src="audio/VV_N/Clean_Target/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+	<td>
+		<audio controls="controls"><source src="audio/VV_I/Clean_Target/output_0.wav" type="audio/x-wav" /></audio>
+		<audio controls="controls"><source src="audio/VV_I/Clean_Target/output_1.wav" type="audio/x-wav" /></audio>
+	</td>
+	<td>
+		<audio controls="controls"><source src="audio/VV_NI/Clean_Target/output_0.wav" type="audio/x-wav" /></audio>
+		<audio controls="controls"><source src="audio/VV_NI/Clean_Target/output_1.wav" type="audio/x-wav" /></audio>
 	</td>
 	</tr>
 
