@@ -1,0 +1,25 @@
+{
+    "n_gpu": 2,
+    
+    "data_loader": {
+        "type": "PreprocessedTestDataLoader",
+        "args":{
+            "dataset_csv_path": "/home/ubuntu/data/VV_TSE/audio.rigid_in_ear_microphone_separate_eval_sets/file_paths_test_noise.csv", 
+            "normalization_values_path": "/home/ubuntu/data/VV_TSE/audio.rigid_in_ear_microphone/normalization_file_train.npz",
+            "speaker_id_csv_path": "/home/ubuntu/data/VV_TSE/audio.rigid_in_ear_microphone_separate_eval_sets/file_paths_test_noise_embeddings.csv",
+            "batch_size": 32,
+            "shuffle": false,
+            "num_workers": 32,
+            "use_enrollment": true
+        }
+    },
+    "metrics": [
+        "si_sdr_per_example",
+        "pesq_wb",
+        "estoi"
+    ],
+    "tester": {
+        "type": "TesterSpeakerID",
+        "args": {}
+    }
+}

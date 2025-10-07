@@ -1,0 +1,25 @@
+{
+    "n_gpu": 2,
+    
+    "data_loader": {
+        "type": "PreprocessedTestDataLoader",
+        "args":{
+            "dataset_csv_path": "/home/ubuntu/data/TSE_oldenburg_preprocessed/outer_inear_separate_eval_sets_OL_interf/file_paths_test_interferer.csv", 
+            "normalization_values_path": "/home/ubuntu/data/TSE_oldenburg_preprocessed/outer_inear_OL_interf/normalization_file_train.npz",
+            "speaker_id_csv_path": "/home/ubuntu/data/TSE_oldenburg_preprocessed/outer_inear_separate_eval_sets_OL_interf/file_paths_test_interferer_embeddings.csv",
+            "batch_size": 32,
+            "shuffle": false,
+            "num_workers": 32,
+            "use_enrollment": true
+        }
+    },
+    "metrics": [
+        "si_sdr_per_example",
+        "pesq_wb",
+        "estoi"
+    ],
+    "tester": {
+        "type": "TesterSpeakerID",
+        "args": {}
+    }
+}

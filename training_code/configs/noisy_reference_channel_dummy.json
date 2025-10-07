@@ -1,0 +1,10 @@
+{
+    "name": "noisy_reference_channel_dummy",
+
+    "arch": {
+        "type": "DummyModel",
+        "args": {
+            "reference_channel": [0]
+        }
+    }
+}

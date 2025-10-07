@@ -1,0 +1,59 @@
+{
+    "name": "Oldenburg_ASSE",
+    "n_gpu": 2,
+
+    "arch": {
+        "type": "FTJNF_MAG",
+        "args": {
+            "n_channels": 2,
+            "ref_ch": [0,1],
+            "mask_ch": [0]
+        }
+    },
+    "data_loader": {
+        "type": "PreprocessedDataLoader",
+        "args":{
+            "train_dataset_csv_path": "/home/ubuntu/data/TSE_oldenburg_preprocessed/outer_inear_OL_interf/file_paths_train.csv", 
+            "train_normalization_values_path": "/home/ubuntu/data/TSE_oldenburg_preprocessed/outer_inear_OL_interf/normalization_file_train.npz",
+            "validation_dataset_csv_path": "/home/ubuntu/data/TSE_oldenburg_preprocessed/outer_inear_OL_interf/file_paths_validation.csv", 
+            "validation_normalization_values_path": "/home/ubuntu/data/TSE_oldenburg_preprocessed/outer_inear_OL_interf/normalization_file_train.npz",
+            "batch_size": 8,
+            "shuffle": false,
+            "num_workers": 32,
+            "random_gain_augmentation": true,
+            "use_enrollment": true
+        }
+    },
+    "optimizer": {
+        "type": "Adam",
+        "args":{
+            "lr": 0.001,
+            "weight_decay": 0
+        }
+    },
+    "loss": "l1TimeSTFTLoss",
+    "metrics": [
+        "si_sdr"
+    ],
+    "lr_scheduler": {
+        "type": "StepLR",
+        "args": {
+            "step_size": 5,
+            "gamma": 0.5
+        }
+    },
+    "trainer": {
+        "type": "TrainerSpeakerID",
+        "args": {},
+        "epochs": 50,
+
+        "save_dir": "saved/",
+        "save_period": 1,
+        "verbosity": 2,
+        
+        "monitor": "min val_loss",
+        "early_stop": -1,
+
+        "tensorboard": true
+    }
+}
