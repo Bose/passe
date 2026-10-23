@@ -13,7 +13,7 @@ import scipy.signal as sig
 import soundfile as sf
 from tqdm import tqdm
 
-# Also be able to catch warnings as errors, for example invalid divison when normalizing empty audio
+# Also be able to catch warnings as errors, for example invalid division when normalizing empty audio
 # https://stackoverflow.com/questions/5644836/in-python-how-does-one-catch-warnings-as-if-they-were-exceptions
 warnings.filterwarnings("error")
 
@@ -197,7 +197,7 @@ if __name__ == '__main__':
             'reference_channel': 1, 
             'sensor_channel': 2
             },
-        'closetalk_inear_right_sisde': {
+        'closetalk_inear_right_side': {
             'reference_channel': 1, 
             'sensor_channel': 4
             } 
@@ -206,7 +206,7 @@ if __name__ == '__main__':
         }
     
     # SELECT HERE
-    setup_name = 'closetalk_inear_right_sisde'
+    setup_name = 'closetalk_inear_right_side'
 
     reference_channel = setup_choices[setup_name]['reference_channel']
     sensor_channel = setup_choices[setup_name]['sensor_channel']

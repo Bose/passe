@@ -112,7 +112,7 @@ class PreprocessedTestDataLoader(DataLoader):
     """"
     Slightly trimmed down dataloader without the validation split functionality.
     Does not require two dataset splits, only one.
-    Per default, this initializes the dataset with return_snr=True for evaluation purposes.
+    By default, this initializes the dataset with return_snr=True for evaluation purposes.
     """
     def __init__(self, dataset_csv_path: pathlib.Path, normalization_values_path: pathlib.Path,
                  speaker_id_csv_path: pathlib.Path = None,
