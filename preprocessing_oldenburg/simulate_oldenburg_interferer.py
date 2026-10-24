@@ -13,7 +13,7 @@ import scipy.signal as sig
 import soundfile as sf
 from tqdm import tqdm
 
-# Also be able to catch warnings as errors, for example invalid divison when normalizing empty audio
+# Also be able to catch warnings as errors, for example invalid division when normalizing empty audio
 # https://stackoverflow.com/questions/5644836/in-python-how-does-one-catch-warnings-as-if-they-were-exceptions
 warnings.filterwarnings("error")
 
